@@ -5,13 +5,13 @@
  
  Click the following link to access the  __[DEMO](http://appdemos.org)__ 
  
-+Default 2 users in the system and corresponding details for Basic in-memory login
-+
-+| User          | Password      |
-+| ------------- |:-------------:|
-+| admin         | *password*    |
-+| user          | *password*    |
-+
+Default 2 users in the system and corresponding details for Basic in-memory login
+
+| User          | Password      |
+| ------------- |:-------------:|
+| admin         | *password*    |
+| user          | *password*    |
+
  # Technology Stack
  * Spring Boot
  * Spring Rest
