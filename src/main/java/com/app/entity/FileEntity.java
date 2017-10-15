@@ -1,19 +1,15 @@
 package com.app.entity;
 
-import java.io.File;
+import org.springframework.core.io.ClassPathResource;
 
 public class FileEntity {
-	File file;
+	ClassPathResource file;
 
-	public FileEntity(File file) {
-		this.file = file;
+	public FileEntity(ClassPathResource classPathResource) {
+		this.file = classPathResource;
 	}
 
-	public File getFileText() {
+	public ClassPathResource getFileText() {
 		return file;
-	}
-
-	public void setFileText(File file) {
-		this.file = file;
 	}
 }

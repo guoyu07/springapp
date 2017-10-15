@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
@@ -15,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
-import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.regex.Pattern;
@@ -38,14 +39,15 @@ public class FileCounterServiceImpl implements FileCounterService {
     	searchVariables.stream().forEach(searchVariable -> wordCountMap.put(searchVariable, 0));
     	
     	//Scan each line filter search words and add the word count and associate with search variables at once. 
-    	try(Scanner sc = new Scanner(textFile.getFileText())) {
-    		while(sc.hasNextLine()) {
-    			Stream<String> wordStream = pattern.splitAsStream(sc.nextLine());
+    	try(BufferedReader br = new BufferedReader(new InputStreamReader(textFile.getFileText().getInputStream()));
+    		Stream<String> lines = br.lines()) {
+    		lines.forEach(line -> {
+    			Stream<String> wordStream = pattern.splitAsStream(line);
     			if(searchVariables.size() > 0) {
     				wordStream = wordStream.filter(wordCountMap::containsKey);
     			}
     			wordStream.forEach(word -> wordCountMap.put(word, Optional.ofNullable(wordCountMap.get(word)).orElse(new Integer(0)) + 1));
-    		}
+    		});
     	}
 		return wordCountMap;
     }

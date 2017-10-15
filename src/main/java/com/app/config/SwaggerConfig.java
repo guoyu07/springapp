@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 "Spring Boot REST API for File Parser",
                 "1.0",
                 "Terms of service",
-                new Contact("Shourien", "https://bitbucket.org/shourien/application/", "shourien@gmail.com"),
+                new Contact("Shourien", "https://github.com/shourien/springapp/", "shourien@gmail.com"),
                 "Apache License Version 2.0",
         		"https://www.apache.org/licenses/LICENSE-2.0");
         return apiInfo;

@@ -5,9 +5,9 @@ import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.app.service.counter.FileCounterService;
 
@@ -30,7 +30,7 @@ public class CounterExportController {
             @ApiResponse(code = 200, message = "Successfully retrieved list containing the top recurring words"),
             @ApiResponse(code = 500, message = "The server encountered error. Please contact administrator!")
     })
-	@RequestMapping(method = RequestMethod.GET, value="/{count}")
+	@GetMapping("/{count}")
 	public String getTopFileResults(@ApiParam(name="count", value="Limiter for results", required=true) @PathVariable("count") Integer count, Model model) throws IOException {
 		model.addAttribute("exportData", counterService.getTopFileResults(count));
 		return "";

@@ -13,6 +13,6 @@ public class CounterDaoImpl implements CounterDao {
 
 	@Override
 	public FileEntity fetchFile() throws IOException {
-		return new FileEntity(new ClassPathResource("sample.txt").getFile());
+		return new FileEntity(new ClassPathResource("sample.txt"));
 	}
 }

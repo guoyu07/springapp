@@ -4,9 +4,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.models.counter.SearchRequest;
@@ -15,6 +15,7 @@ import com.app.service.counter.FileCounterService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.ApiResponse;
 
@@ -38,8 +39,8 @@ public class CounterRestController {
             @ApiResponse(code = 200, message = "Successfully retrieved list containing the counts"),
             @ApiResponse(code = 500, message = "The server encountered error. Please contact administrator!")
     })
-    @RequestMapping(method = RequestMethod.POST, value="/search", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SearchResponse findWordCount(@RequestBody SearchRequest searchRequest) throws IOException {
+    @PostMapping(value="/search", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public SearchResponse findWordCount(@ApiParam(value = "List of strings, search params", required = true) @RequestBody SearchRequest searchRequest) throws IOException {
     	logger.debug("Request Params {}", searchRequest.getSearchText().toString());
     	Map<String, Integer> wordMap = counterService.findCountForParameters(searchRequest.getSearchText());
     	return transformToSearchResponse(wordMap);
