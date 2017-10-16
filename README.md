@@ -1,4 +1,4 @@
- # Spring Boot REST Application #
+ ## Spring Boot REST Application ##
  
  This is a Spring Boot Application with a full-fledged REST API service exposed with Swagger 2.0 UI.
  
@@ -13,7 +13,7 @@ Default 2 users in the system and corresponding details for Basic in-memory logi
 | admin         | *password*    |
 | user          | *password*    |
 
- # Technology Stack
+## Technology Stack ##
  * Spring Boot
  * Spring Rest
  * Swagger 2.0
