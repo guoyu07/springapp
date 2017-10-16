@@ -1,4 +1,4 @@
- #Spring Boot REST Application
+ # Spring Boot REST Application
  This is a Spring Boot Application with a full-fledged REST API service exposed with Swagger 2.0 UI.
  
  __*The this application is hosted on Microsoft Azure Cloud.**__
