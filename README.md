@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/shourien/springapp/branches/master/shields_badge.svg)](https://semaphoreci.com/shourien/springapp/branches/master/builds/2) 
+
 ## Spring Boot REST Application
  
  This is a Spring Boot Application with a full-fledged REST API service exposed with Swagger 2.0 UI.
