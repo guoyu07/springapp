@@ -1,4 +1,4 @@
-[![Build Status](https://semaphoreci.com/api/v1/shourien/springapp/branches/master/shields_badge.svg)](https://semaphoreci.com/shourien/springapp/branches/master/builds/2) 
+[![Build Status](https://semaphoreci.com/api/v1/shourien/springapp/branches/master/shields_badge.svg)](https://semaphoreci.com/shourien/springapp)
 
 ## Spring Boot REST Application
  
